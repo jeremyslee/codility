@@ -49,14 +49,14 @@ Copyright 2009–2018 by Codility Limited. All Rights Reserved. Unauthorized cop
 */
 
 function solution(X, A) {
-  const arr1 = [];
-  const arr2 = [];
+  const arr = [];
+  let lenCount = 0;
   
   for (let i = 0; i < A.length; i++) {
-    if (A[i] <= X && !arr1[A[i]]) {
-      arr1[A[i]] = true;
-      arr2.push(A[i]);
-      if (arr2.length === X) return i;
+    if (A[i] <= X && !arr[A[i]]) {
+      arr[A[i]] = true;
+      lenCount++;
+      if (lenCount === X) return i;
     }
   }
   return -1;
